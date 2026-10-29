@@ -1,0 +1,195 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #0c0d12;
+    --bg-surface: #121319;
+    --bg-card: #161821;
+    --bg-card-hover: #1c1e29;
+    --border-subtle: rgba(255, 255, 255, 0.07);
+    --border-medium: rgba(255, 255, 255, 0.12);
+    --border-hover: rgba(255, 255, 255, 0.22);
+    --accent-amber: #f59e0b;
+    --accent-emerald: #10b981;
+    --accent-indigo: #6366f1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #0c0d12;
+    color: #f4f4f5;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  body {
+    overflow-x: hidden;
+    background-color: #0c0d12;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-heading {
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  code,
+  pre,
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom Scrollbar - Natural & Sleek */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0c0d12;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #232530;
+  border-radius: 9999px;
+  border: 1px solid #0c0d12;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #36394c;
+}
+
+/* Natural Editorial Grid Pattern */
+.bg-editorial-grid {
+  background-size: 36px 36px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+}
+
+/* High-End Editorial Card with 3D Perspective */
+.editorial-card {
+  background: #13141b;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.editorial-card:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 20px 40px -15px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Ambient Studio Spotlight */
+.ambient-spotlight {
+  background: radial-gradient(circle 800px at 50% 0%, rgba(255, 255, 255, 0.035), transparent 75%);
+}
+
+/* Clean Tactile Primary Button with Magnetic Support */
+.btn-editorial-primary {
+  background: #f4f4f5;
+  color: #0c0d12;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.btn-editorial-primary:hover {
+  background: #ffffff;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+}
+
+.btn-editorial-secondary {
+  background: #161821;
+  color: #e4e4e7;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-editorial-secondary:hover {
+  background: #1c1e29;
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+/* Animated Shimmer Sweep for Badges */
+@keyframes light-sweep {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+.shimmer-badge {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-badge::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  animation: light-sweep 3.5s ease-in-out infinite;
+}
+
+/* Section eyebrow badge */
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 9999px;
+  background: #13141b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #a1a1aa;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Warm accent gradient for key words */
+.text-gradient {
+  background: linear-gradient(110deg, #fcd34d 0%, #f59e0b 45%, #fb7185 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Form field */
+.field {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 0.75rem;
+  background: #0e0f14;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field::placeholder {
+  color: #52525b;
+}
+
+.field:focus {
+  outline: none;
+  border-color: rgba(245, 158, 11, 0.6);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.12);
+}
